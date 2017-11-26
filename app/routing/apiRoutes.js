@@ -10,26 +10,28 @@ apiRoutes = {
 	findMatch: function(userdata, apiJson) {
 		var userName = userdata.name;
 		var userScores = userdata.scores;
-		var bestMatch;
-		var bestMatchSum;
+		var friendArr = [];
 		for(var i = 0; i< apiJson.length; i++){
 			if(userName !== apiJson[i].name) {
 				var currentMatchObj = apiJson[i];
 				var currentMatchScores = apiJson[i].scores;
-				var matchArr = [];
+				var matchArr = [];				
 				for(var j = 0; j<10; j++) {
 					matchArr.push(Math.abs(userScores[j]-currentMatchScores[j]));
 				}
 				var sum = matchArr.reduce(apiRoutes.add, 0);
-				if(bestMatch === undefined) {
-					bestMatch = currentMatchObj;
-					bestMatchSum = currentMatchScores.reduce(apiRoutes.add,0);
-				}
-				else if(sum<bestMatchSum) {
-					bestMatch = currentMatchObj;
-				}
+				console.log(apiJson[i].name, sum);
+				friendArr.push({name: apiJson[i].name, score: sum})
 			}
 		}
+		friendArr.sort(function(a, b) {
+    			return a.score - b.score;});
+		console.log("friendArr 0:", friendArr[0]);
+		function findBestMatch(friend) {
+			return friend.name === friendArr[0].name;
+		};
+		var bestMatch = apiJson.find(findBestMatch);
+
 		return bestMatch;
 	},
 	routes: function(app) {
