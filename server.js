@@ -9,7 +9,7 @@ var app = express();
 
 
 //Setting up port, initializing body-parser
-var PORT = 3000 || process.env.PORT;
+var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
