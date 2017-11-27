@@ -8,4 +8,6 @@ or you could check out the api of friends <br/>
 ![Image of api](/images/api.png) <br/>
 or the github page that has the code for this project. <br/>
 ![Image of Github](/images/github.png) <br/>
+After completing the survey, you get your result <br/>
+![Image of result](/images/result.png)
 
