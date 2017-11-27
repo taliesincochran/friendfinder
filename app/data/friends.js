@@ -8,7 +8,7 @@ module.exports = {
 		},
 		{
 			name: "King Phillipe of Belgium",
-			photo: "https://upload.wikimedia.org/wikipedia/en/e/e9/Lucy_van_Pelt.png",
+			photo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Philippe_de_Belgique_2010.jpg",
 			scores: [5,3,2,5,5,2,5,3,1,1]
 		},
 		{
